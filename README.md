@@ -15,3 +15,8 @@ Este repositorio se creo con el objetivo de reforzar los conocimientos en Git pa
 `git checkout -b main`
 
 3. Crear el archivo README.md y realizar el commit.
+```
+git add .
+
+git commit -m "Inicio del proyecto con el primer reto"
+```
