@@ -15,14 +15,31 @@ Este repositorio se creo con el objetivo de reforzar los conocimientos en Git pa
 `git checkout -b main`
 
 3. Crear el archivo README.md y realizar el commit.
-```
-git add .
+    ```
+    git add .
 
-git commit -m "Inicio del proyecto con el primer reto"
-```
+    git commit -m "Inicio del proyecto con el primer reto"
+    ```
 
 4. Subir los cambios al repositorio en GitHub
-```
-git remote add origin git@github.com:juanhvcol8/retos-git-open.git
-git push -u origin main
-```
+    ```
+    git remote add origin git@github.com:juanhvcol8/retos-git-open.git
+    git push -u origin main
+    ```
+
+# #2 Reto
+
+1. Crear los archivos en el proyecto
+    ```
+    ./index.html
+    ./test.log
+    ./vendor/autoload.php
+    ./node_modules/index.ts
+    ```
+
+2. Crear el archivo .gitignore y omitir el control de versiones para los archivos para:
+    - Archivos que están en la carpeta node_modules
+    - Archivos que están en la carpeta vendor
+    - Archivos con la extensión .log en el proyecto
+<br>
+3. Realizar el commit únicamente con los archivos creados y no ignorados en el proyecto.
