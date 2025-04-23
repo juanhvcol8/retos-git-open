@@ -37,9 +37,15 @@ Este repositorio se creo con el objetivo de reforzar los conocimientos en Git pa
     ./node_modules/index.ts
     ```
 
-2. Crear el archivo .gitignore y omitir el control de versiones para los archivos para:
-    - Archivos que están en la carpeta node_modules
-    - Archivos que están en la carpeta vendor
-    - Archivos con la extensión .log en el proyecto
-<br>
+2. Crear el archivo .gitignore y omitir el control de versiones para los archivos:
+    ```
+        - Archivos que están en la carpeta node_modules
+        - Archivos que están en la carpeta vendor
+        - Archivos con la extensión .log en el proyecto
+    ```
 3. Realizar el commit únicamente con los archivos creados y no ignorados en el proyecto.
+    ```
+    git add .
+    git commit -m "Se agregó la solución del reto #2 al archivo README.md"
+    
+    ```
