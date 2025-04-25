@@ -63,11 +63,14 @@ rm -rf node_modules vendor index.html test.log
 npm init -y 
 ```
 
-4. Crear un archivo index.js con el siguiente contenido:
+4. Crear un archivo index.js:
 ```
 touch index.js
 ```
+Agregamos el siguiente contenido:
+<br>
 console.log("¡Retos de GIT!");
+<br>
 5. Actualizar el repo remoto con el cambio
 ```
 git add .
