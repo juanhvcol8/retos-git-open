@@ -49,3 +49,28 @@ Este repositorio se creo con el objetivo de reforzar los conocimientos en Git pa
     git commit -m "Se agregó la solución del reto #2 al archivo README.md"
     
     ```
+    
+    
+# #3 Reto
+
+1. Eliminar las carpetas node_modules, vendor y los archivos index.html y test.log
+```
+rm -rf node_modules vendor index.html test.log
+```
+
+3. Inicializar un proyecto de Node.js
+```
+npm init -y 
+```
+
+4. Crear un archivo index.js con el siguiente contenido:
+```
+touch index.js
+```
+console.log("¡Retos de GIT!");
+5. Actualizar el repo remoto con el cambio
+```
+git add .
+git commit -m "Se agregó la solución del reto #3 al archivo README.md"
+git push origin main
+```
