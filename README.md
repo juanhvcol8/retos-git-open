@@ -77,3 +77,38 @@ git add .
 git commit -m "Se agregó la solución del reto #3 al archivo README.md"
 git push origin main
 ```
+
+# #4 Reto
+1. A partir de la rama main crear una nueva rama llamada development
+```
+git checkout -b development
+git branch
+```
+2. Regresar a la rama main
+```
+git checkout main
+git branch
+```
+3. Modificar el archivo index.js agregando:
+console.log('Modificación Reto 3 rama main');
+4. Sin perder el cambio de la rama main y sin hacer commit o push de los cambios, cambiar a la rama development y modificar el archivo index.js agregando
+console.log('Modificación Reto 3 rama development');
+```
+git stash
+git checkout development
+git add index.js
+git commit -m "Se modifico el index.js en la rama development"
+```
+5. Hacer push a la rama development
+```
+git push origin development
+
+```
+6. Regresar a la rama main, recuperar los cambios y hacer push a la rama
+```
+git checkout main
+git stash pop
+git add index.js
+git commit -m "Se modifico el index.js en la rama main"
+git push origin main
+```
