@@ -112,3 +112,44 @@ git add index.js
 git commit -m "Se modifico el index.js en la rama main"
 git push origin main
 ```
+
+
+# #5 Reto
+1. Ubicarse en la rama main
+```
+git checkout main
+```
+2. Crear un archivo llamado operaciones.ts agregando una función que permita sumar dos números y retornar el resultado
+```
+touch operaciones.ts
+echo "function sumar(a: number, b: number): number {
+    return a + b;
+}" > operaciones.ts
+```
+3. Sin perder el cambio de la rama main y sin hacer commit o push de los cambios, cambiar a la rama development, recuperar las modificaciones hechas en el punto 2 
+asegurandose que los cambios permanezcan disponibles para ser usados en cualquier otra rama
+```
+git stash push -u -m "Nueva funcion para sumar dos numeros"
+git checkout development
+git stash list
+git stash apply stash@{0}
+```
+4. Hacer push a la rama development
+```
+git add operaciones.ts
+git commit -m "Se agrego el archivo operaciones.ts y su funcion para sumar"
+git push -u origin development
+```
+5. Regresar a la rama main, recuperar los cambios. NO se debe hacer commit ni push a la rama main
+```
+git checkout main
+git stash apply stash@{0}
+```
+6. Eliminar el archivo package.json del proyecto
+```
+rm package.json
+```
+7. Recuperar el archivo package.json
+```
+git checkout -- package.json
+```
