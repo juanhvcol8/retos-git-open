@@ -217,3 +217,27 @@ git add :/
 git add -A && git commit -m ""Mezcla cambios desde rama remota development y resolución de conflictos""
 git push origin main
 ```
+
+# #7 Reto
+Rama main: El objetivo es recuperar el estado y contenido del archivo operaciones.ts en donde solo tenía el método suma()						
+
+## Solución 1
+```
+git reset --soft 869dafb13e5a874d8d2f491940826c747d83cb6d # Recupera el estado del archivo
+git restore --staged operaciones.ts # Devuelve cambios en el stage
+git restore operaciones.ts # Deja el archivo en el estado inicial antes del commit
+
+# Comando adicional para volver al estado inicial, antes del inicio del reto, todos los archivos
+git reset --hard 83e5ac1a304f3628d531a43390b52845e9c2844b
+```
+
+## Solución 2
+```
+# Comando adicional para volver al estado inicial, antes del inicio del reto, todos los archivos
+git reset --hard 869dafb13e5a874d8d2f491940826c747d83cb6d
+```
+
+
+Cual de las dos es la solución recomendada? eso depende, si estoy seguro de devolver todos los cambios la solución 2 es mejor, pero si debo ir con cuidado para revisar algo en el camino, la solución recomendada es la 1 que es útil cuando hay muchos archivos/cambios en el histórico
+
+Otra diferencia va a ser la conservación del histórico de cambios de GIT, la solución 1 conserva todo el histórico, la solución 2 no					
