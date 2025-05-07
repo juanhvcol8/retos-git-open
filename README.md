@@ -153,3 +153,67 @@ rm package.json
 ```
 git checkout -- package.json
 ```
+
+# #6 Reto
+```
+git checkout main
+git add -A && git commit -m ""Actualización de cambios del reto 5""
+git push origin main
+git checkout development
+```
+
+Ajustes al archivo operaciones.ts:
+
+```
+console.log('Operaciones Matemáticas');
+
+function opAdd(a: number, b: number, c: number): number {
+    return a+b+c;
+}
+
+function opLess(a: number, b: number): number {
+    return a-b;
+}
+```
+
+Actualizar la rama development en el repo remoto
+```
+git add -A && git commit -m ""Modificaciones a operaciones.ts""
+git push origin development
+```
+
+Cambio a main y ajustes
+```
+git checkout main
+```
+
+Modificaciones a operaciones.ts
+```
+function suma(a: number, b: number): number {
+    return a+b;
+}
+
+function dividir(a: number, b: number) {
+    try {
+        return a+b;
+    } catch (error) {
+        console.error(`Error: ${error}`);
+    }
+}
+```
+
+Actualización remota de rama main:
+```
+git add -A && git commit -m ""Modificaciones a operaciones.ts""
+git push origin main
+```
+
+Fusión de cambios remotos de development a rama main y actualización remota de la rama main
+```
+git fetch
+git merge origin/development // git merge --no-ff origin/development
+// TODO: solución de conflictos
+git add :/
+git add -A && git commit -m ""Mezcla cambios desde rama remota development y resolución de conflictos""
+git push origin main
+```
