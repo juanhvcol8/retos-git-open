@@ -12,5 +12,7 @@ function opLess(a: number, b: number): number {
     return a - b;
 }
 function porcentaje(a, b) {
+    if(isNaN(a) || isNaN(b))
+        new Error("Los parametros deben ser numericos");
     return (a*b)/100;
 }
