@@ -11,3 +11,6 @@ function opAdd(a: number, b: number, c: number): number {
 function opLess(a: number, b: number): number {
     return a - b;
 }
+function multiplicar(a, b) {
+    return a*b;
+}
