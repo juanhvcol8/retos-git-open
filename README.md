@@ -241,3 +241,51 @@ git reset --hard 869dafb13e5a874d8d2f491940826c747d83cb6d
 Cual de las dos es la solución recomendada? eso depende, si estoy seguro de devolver todos los cambios la solución 2 es mejor, pero si debo ir con cuidado para revisar algo en el camino, la solución recomendada es la 1 que es útil cuando hay muchos archivos/cambios en el histórico
 
 Otra diferencia va a ser la conservación del histórico de cambios de GIT, la solución 1 conserva todo el histórico, la solución 2 no					
+
+
+# #8 Reto
+Agrega el siguiente método en el archivo de operaciones en la rama main:
+
+```
+function multiplicar(a, b) {
+    return a*b;
+}
+```
+
+Actualiza el cambio en repo remoto (commit y push)
+git add operaciones.ts  
+git commit -m "Se agrego el método multiplicar al archivo operaciones.ts"
+git push -u origin main 
+Supongamos que el PO del proyecto nos indicó que el método no debía ser ese sino que debía ser el siguiente por lo que debes reemplazar el método multiplicar():
+```
+function porcentaje(a, b) {
+    return (a*b)/100;
+}
+```
+git add operaciones.ts  
+git commit -m "Se cambio el método multiplicar por el de porcentaje en el archivo operaciones.ts"
+git push -u origin main 
+
+Actualiza el cambio en repo remoto (commit y push)
+
+Nuevamente el PO nos indica que debemos devolver el cambio y dejar solo el método múltiplicar, pero además notas que el método multiplicar() tiene un bug, porque generará una excepción si los parámetros a y b no son números, por lo que debes corregirlo
+
+Para corregir el bug deberás tener en cuenta:
+
+1. No puedes usar git checkout <commit>
+2. No puedes usar git reset <commit>
+3. No puedes simplemente modificar el archivo y hacer un nuevo commit, en este caso sería la solución más sencilla pero no esta permitido
+4. Debes buscar otra manera de realizar el cambio, en donde a nivel del histórico de cambios quede registrada (commit) la recuperación del cambio
+5. Soluciona el bug del método multiplicar
+6. Actualiza los cambios en el repo remoto
+7. Mezcla la rama main local en la rama development local y actualiza el repo remoto
+
+git revert --no-commit 8aca515
+git add operaciones.ts
+git commit -m "Se deja el método multiplicar implementado inicialmente pero corrigiendo los parametros en el archivo operaciones.ts"
+git push origin main
+git checkout development
+git merge --no-ff origin/main
+git add operaciones.ts
+git commit -m ""
+git push origin development
