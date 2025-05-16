@@ -289,3 +289,38 @@ git merge --no-ff origin/main
 git add operaciones.ts
 git commit -m ""
 git push origin development
+
+# #9 Reto
+
+1. Crea una etiqueta de versión beta 1.0.0-beta con el último commit del proyecto
+git tag -a 1.0.0-beta -m "Versión 1.0.0 beta"
+
+
+2. Sube la etiqueta al repositorio remoto
+git push origin 1.0.0-beta
+
+
+3. Genera un pequeño release en GitHub basado en esa etiqueta, y márcalo como pre-release
+Ingresé a Tags > Create New Release > Marque como un pre-release y seleccione el tag
+
+4. Comenta para qué sirven las etiquetas en un proyecto, que estándar, patrón o semántica se debe tener en cuenta o se sugiere
+
+    - Sirven para crear puntos estables de nuestro proyecto o para las pre-release 
+    un punto en el que aún se está desarrollando o se están realizando pruebas
+    - Se debe usar el prefijo v para indicar que es versión
+    - Semantic Versioning (SemVer) => MAJOR.MINOR.PATCH => v1.0.0 - v1.2.3 - v2.0.0
+
+Pre-release
+alpha	Primera versión temprana, inestable, sujeta a cambios grandes.
+beta	Versión más estable que alpha, pero puede tener errores.
+rc	    (release candidate) Candidato a versión final, en fase de pruebas finales.
+dev	    Versión de desarrollo. Usada a veces internamente.
+canary	Versión experimental, se usa para pruebas automáticas.
+preview	Similar a beta, pero puede incluir características incompletas.
+
+1.0.0-alpha < 1.0.0-beta < 1.0.0-rc < 1.0.0
+
+4. Comenta para qué sirven los release y pre-release
+Los release son versiones creadas para indicar la versión probada o estable del desarrollo
+Los pre-release (usando los sufijos) nos ayudan a indicar en que parte de las pruebas se encuentra el desarrollo
+
